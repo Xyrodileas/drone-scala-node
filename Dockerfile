@@ -14,7 +14,7 @@ RUN \
 	dpkg-reconfigure dash								 				&& \
 	rm -rf /var/lib/apt/lists
 
-RUN apt install dpkg-deb dpkg-sig dpkg-genchanges lintian fakeroot
+RUN apt install dpkg-sig lintian fakeroot
 
 RUN \
 	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash				&& \
