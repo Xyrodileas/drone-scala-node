@@ -19,7 +19,7 @@ RUN echo "deb-src http://deb.debian.org/debian buster-updates main /" >> /etc/ap
 
 RUN cat etc/apt/sources.list
 RUN apt update
-RUN apt install -y dpkg-sig lintian fakeroot
+RUN apt install -y dpkg-sig lintian fakeroot rpm
 
 RUN \
 	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash				&& \
