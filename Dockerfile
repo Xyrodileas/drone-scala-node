@@ -14,6 +14,8 @@ RUN \
 	dpkg-reconfigure dash								 				&& \
 	rm -rf /var/lib/apt/lists
 
+RUN uname -a
+
 RUN apt install dpkg-sig lintian fakeroot
 
 RUN \
