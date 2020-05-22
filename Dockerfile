@@ -14,9 +14,12 @@ RUN \
 	dpkg-reconfigure dash								 				&& \
 	rm -rf /var/lib/apt/lists
 
-RUN uname -a
+RUN echo "deb-src http://deb.debian.org/debian buster main /" >> /etc/apt/sources.list
+RUN echo "deb-src http://deb.debian.org/debian buster-updates main /" >> /etc/apt/sources.list
 
-RUN apt install dpkg-sig lintian fakeroot
+RUN cat etc/apt/sources.list
+RUN apt update
+RUN apt install -y dpkg-sig lintian fakeroot
 
 RUN \
 	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash				&& \
